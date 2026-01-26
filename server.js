@@ -31,20 +31,17 @@ app.use(express.json())
 
 //serve static files
 app.use(express.static(path.join(__dirname, '/public')))
+app.use('/subdir', express.static(path.join(__dirname, '/public')))
 
-app.get(/^\/(|index(.html)?)$/, (req, res) => {
-    res.sendFile(path.join(__dirname, 'views', 'index.html'));
-});
-app.get(/\/new-page(.html)?/, (req, res) => {
-    res.sendFile(path.join(__dirname, 'views', 'new-page.html'))
-})
-app.get(/\/old-page(.html)?/, (req, res) => {
-    res.redirect(301, '/new-page.html') // 302 by default which means temporary redirect
-    // 301 means permanent redirect
-})
+//routes
+app.use('/', require('./routes/root'))
+app.use('/subdir', require('./routes/subdir'))
+app.use('/employees', require('./routes/api/employees'))
+
+
 
 //Route handlers
-app.get(/\/hello(.html)?/, (req, res, next) => {
+/* app.get(/\/hello(.html)?/, (req, res, next) => {
     console.log('attempted to load hello.html')
     next()
 }, (req, res) => {
@@ -64,7 +61,7 @@ const three = (req, res) => {
     res.send('Finished!')
 }
 
-app.get('/handler', [one, two, three])
+app.get('/handler', [one, two, three]) */
 
 app.all(/\/*/, (req, res) => { // all types of requests (GET, POST, PUT, DELETE, etc.)
     res.status(404)
