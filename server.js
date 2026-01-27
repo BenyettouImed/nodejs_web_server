@@ -5,22 +5,11 @@ const {logger} = require('./middleware/logEvents')
 const cors = require('cors')
 const errorHandler = require('./middleware/errorHandling')
 const PORT = process.env.PORT || 3500
+const corsOptions = require('./config/corsOptions')
 
 //custom middleware logger
 app.use(logger)
 
-// Cross Origin Resource Sharing
-const whitelist = ['https://www.yoursite.com', 'http://127.0.0.1:5500', 'http://localhost:3500']// the sites that will pass the cors and that access our backend, the sencond one can represent our frontend
-const corsOptions = {
-    origin : (origin, callback) => {
-        if (whitelist.indexOf(origin) !== -1 || !origin) { // | !origin is for undefined origins (for development)
-            callback(null, true)
-        } else {
-            callback(new Error('Not allowed by CORS'))
-        }
-    },
-    optionssSuccessStatus : 200
-}
 app.use(cors(corsOptions))
 
 // built in middleware for regetring form data
@@ -37,8 +26,6 @@ app.use('/subdir', express.static(path.join(__dirname, '/public')))
 app.use('/', require('./routes/root'))
 app.use('/subdir', require('./routes/subdir'))
 app.use('/employees', require('./routes/api/employees'))
-
-
 
 //Route handlers
 /* app.get(/\/hello(.html)?/, (req, res, next) => {
