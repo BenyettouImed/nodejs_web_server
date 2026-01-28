@@ -1,4 +1,4 @@
-const path = requre('path')
+const path = require('path')
 
 const usersDB = {
     users : require(path.join(__dirname, '..', 'model', 'users.json')),
