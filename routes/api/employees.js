@@ -3,6 +3,7 @@ const router  = express.Router()
 const path = require('path')
 const employeesController = require(path.join(__dirname,'..', '..', 'controllers', 'employeesController'))
 
+
 router.route('/')
     .get(employeesController.getAllEmployees)
     .post(employeesController.creatNewEmployee)
