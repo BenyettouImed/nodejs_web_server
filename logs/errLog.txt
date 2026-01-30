@@ -3,3 +3,5 @@
 20260126	21:15:38	feed985f-18de-4f74-9474-7b475861949e	TypeError: Cannot read properties of undefined (reading 'firstname')
 20260126	21:17:04	55aa4152-29bd-49fc-ada9-2a7f4cbcf1d1	TypeError: Cannot read properties of undefined (reading 'lastname')
 20260127	14:34:43	781c08d1-571d-45cf-8e39-1f7fc91bc776	SyntaxError: Expected property name or '}' in JSON at position 4
+20260130	18:01:28	363c5334-9094-412a-9b5e-2797280a7407	TypeError: foundUser.save is not a function
+20260130	18:04:11	93346bff-6bc9-4f88-aa6d-364e131cb404	TypeError: foundUser.save is not a function

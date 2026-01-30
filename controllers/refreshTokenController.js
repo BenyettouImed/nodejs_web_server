@@ -1,24 +1,18 @@
-const path = require("path");
-const usersDB = {
-  users: require(path.join(__dirname, "..", "model", "users.json")),
-  setUsers: function (data) {
-    this.users = data;
-  },
-};
+
+const User = require("../model/User");
 const jwt = require("jsonwebtoken");
 
-const handleRefreshToken = (req, res) => {
+const handleRefreshToken = async (req, res) => {
   const cookies = req.cookies;
   if (!cookies?.jwt) {
     // cookies?.jwt means if we have cookies then check for jwt
     return res.sendStatus(401);
   }
-  console.log(cookies.jwt);
+  
   const refreshToken = cookies.jwt;
 
-  const foundUser = usersDB.users.find(
-    (usr) => usr.refreshToken === refreshToken,
-  );
+  const foundUser = await User.findOne({refreshToken}).exec();// we only put refreshToken because we have set resreshToken = cookies.jwt so we do not write refreshToken : refreshToken
+
   if (!foundUser) {
     return res.sendStatus(403); // forbiden
   }
@@ -36,7 +30,7 @@ const handleRefreshToken = (req, res) => {
         },
       },
       process.env.ACCESS_TOKEN_SECRET,
-      { expiresIn: "30s" },
+      { expiresIn: "3600s" },
     );
     res.json({ accessToken });
   });
