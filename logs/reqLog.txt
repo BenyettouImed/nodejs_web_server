@@ -475,3 +475,17 @@
 20260130	18:51:36	034cfb5c-2706-4045-977b-9e3ec34f8184	DELETE	undefined	/employees
 20260130	18:51:47	82589bed-f509-4ced-b292-f2745a8072aa	GET	undefined	/employees
 20260130	18:52:06	0dc92dc7-60bf-462d-a8b8-7a46c83b4971	GET	undefined	/employees/697cef909d28b1a41068168d
+20260130	19:21:09	20fb0d73-6e75-4efd-adab-25705528698f	GET	undefined	/users
+20260130	19:21:20	79ce3ca6-1ee9-4dca-95e8-977bb7192c86	POST	undefined	/auth
+20260130	19:21:38	35cae451-fdb1-4be2-972e-84371250c150	GET	undefined	/users
+20260130	19:22:35	66e9b3a5-06dd-480b-bf62-84e510c06017	GET	undefined	/users
+20260130	19:27:02	03c3b052-fb9f-4d33-a4ed-ec38b3f06e90	GET	undefined	/users
+20260130	19:27:12	0d1e486c-1b31-4f79-aa3c-ef86196136b6	GET	undefined	/users/697bc379cb638c43dd755fa8
+20260130	19:35:43	bbccca2e-159c-4d4c-bf8d-a45c8dd1e220	GET	undefined	/users/697bc379cb638c43dd755fa8
+20260130	19:35:47	d6f04b31-bdd2-4737-8de5-bd544fd8ab39	GET	undefined	/users/
+20260130	19:36:10	1bd33a7e-b2db-4e6b-aeff-cf76e1256727	POST	undefined	/auth
+20260130	19:36:40	72989376-e731-40eb-9912-d06924739b27	GET	undefined	/users
+20260130	19:37:06	f8bf376f-899d-46f6-92d5-b3ecce2eb3a2	DELETE	undefined	/users
+20260130	19:37:16	d6b7d558-b188-4728-ad85-cb023c8723a0	POST	undefined	/auth
+20260130	19:37:26	793e7635-60d6-41c1-a25b-92813c1ac0fd	DELETE	undefined	/users
+20260130	19:37:30	f02363f7-7a3e-4eb4-8105-757d597a1704	GET	undefined	/users
