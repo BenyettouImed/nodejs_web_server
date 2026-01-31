@@ -18,7 +18,7 @@ const userSchema = new Schema({
     type: String,
     required: true,
   },
-  refreshToken: String,
+  refreshToken: [String], // we use an array because we can have multiple refresh tokens for a single user i.e multiple devices
 });
 
 module.exports = mongoose.model("User", userSchema);
