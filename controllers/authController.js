@@ -47,6 +47,7 @@ const handleLogin = async (req, res) => {
           2) refresh token is stolen
           3) if 1 & 2, reuse detection is needed to clear all refresh tokens when user logs in
 
+          in summary an old refresh token already cleared and deleted is used for login
       */
 
       const refreshToken = cookies.jwt;
